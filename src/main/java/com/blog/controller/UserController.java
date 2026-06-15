@@ -3,20 +3,18 @@ package com.blog.controller;
 import com.blog.model.User;
 import com.blog.service.UserService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/auth")
-public class AuthController {
+@RequestMapping("/user")
+public class UserController {
     private final UserService userService;
 
-    public AuthController(UserService userService) {
+    public UserController(UserService userService) {
         this.userService = userService;
-    }
-
-    @GetMapping("/hello")
-    public ResponseEntity<?> hello() {
-        return ResponseEntity.ok().body("Hello World from API! - NOT AUTHENTICATE");
     }
 
     @PostMapping("/new")
