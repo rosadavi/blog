@@ -20,6 +20,10 @@ public class User {
     @Column(nullable = false)
     private String password;
 
+    public UUID getId() {
+        return id;
+    }
+
     public String getName() {
         return name;
     }
